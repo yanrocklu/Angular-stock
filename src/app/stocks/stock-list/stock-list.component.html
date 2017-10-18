@@ -1,0 +1,18 @@
+<p>app-stock-list</p>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn-success" (click)="onAddNewStock()">Create New Stock</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <a class="list-group-item"
+         style="cursor:pointer"
+         *ngFor="let stockEl of stocks; let i = index">
+         {{i}} {{ stockEl.name }} {{stockEl.code}}
+      </a>
+    </ul>
+  </div>
+</div>
