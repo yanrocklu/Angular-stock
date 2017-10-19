@@ -12,6 +12,9 @@ import { StockListComponent } from './stocks/stock-list/stock-list.component';
 import { StockStartComponent } from './stocks/stock-start/stock-start.component';
 import {StockService} from "./stocks/stock.service";
 import { StockItemComponent } from './stocks/stock-list/stock-item/stock-item.component';
+import { StockDetailComponent } from './stocks/stock-detail/stock-detail.component';
+import { StockEditComponent } from './stocks/stock-edit/stock-edit.component';
+import {DropdownDirective} from "./shared/dropdown.directive";
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { StockItemComponent } from './stocks/stock-list/stock-item/stock-item.co
     StocksComponent,
     StockListComponent,
     StockStartComponent,
-    StockItemComponent
+    StockItemComponent,
+    StockDetailComponent,
+    StockEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

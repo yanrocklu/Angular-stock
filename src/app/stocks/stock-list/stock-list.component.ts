@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Stock} from "../stock.model"
 import {StockService} from "../stock.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-stock-list',
@@ -10,19 +11,24 @@ import {StockService} from "../stock.service";
 })
 export class StockListComponent implements OnInit {
 
+  subscription: Subscription;
   stocks: Stock[];
-
 
   constructor(private stockService: StockService) { }
 
   ngOnInit() {
+    this.subscription = this.stockService.stockChanged.subscribe(
+      (stocks: Stock[]) => {
+        this.stocks = stocks;
+      }
+    )
     this.stocks = this.stockService.getStocks();
-    console.log("stocks:" + this.stocks);
-
   }
 
   onAddNewStock(){
 
   }
+
+
 
 }

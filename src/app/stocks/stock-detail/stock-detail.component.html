@@ -1,0 +1,30 @@
+<p>
+  stock-detail works!
+</p>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{stock.name}}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+    appDropDown>
+      <button class="btn btn-primary dropdown-toggle">
+        Manage Stock <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onEditStock()" style="cursor:pointer;">Edit Stock</a></li>
+        <li><a (click)="onDeleteStock()" style="cursor:pointer;">Delete Stock</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{stock.code}}</h1>
+  </div>
+</div>

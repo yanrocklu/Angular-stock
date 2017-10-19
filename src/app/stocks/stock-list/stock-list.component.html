@@ -7,12 +7,10 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <ul class="list-group">
-      <a class="list-group-item"
-         style="cursor:pointer"
-         *ngFor="let stockEl of stocks; let i = index">
-         {{i}} {{ stockEl.name }} {{stockEl.code}}
-      </a>
-    </ul>
+    <app-stock-item
+        *ngFor="let stockEl of stocks; let i = index"
+        [stock]="stockEl"
+        [index]="i"
+    ></app-stock-item>
   </div>
 </div>
