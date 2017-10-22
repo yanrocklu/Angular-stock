@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 
 import {Stock} from "../stock.model"
 import {StockService} from "../stock.service";
@@ -9,7 +9,7 @@ import {Subscription} from "rxjs";
   templateUrl: './stock-list.component.html',
   styleUrls: ['./stock-list.component.css']
 })
-export class StockListComponent implements OnInit {
+export class StockListComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
   stocks: Stock[];
@@ -27,6 +27,10 @@ export class StockListComponent implements OnInit {
 
   onAddNewStock(){
 
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 

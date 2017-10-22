@@ -4,6 +4,7 @@ import {Subject} from "rxjs";
 
 @Injectable()
 export class StockService{
+  //use this stockChanged because the stock array changed
   stockChanged = new Subject<Stock[]>();
 
   private stocks: Stock[] = [
@@ -39,6 +40,16 @@ export class StockService{
 
   deleteStock(index: number){
     this.stocks.splice(index,1);
+    this.stockChanged.next(this.stocks.slice());
+  }
+
+  updateStock(index: number, newStock: Stock){
+    this.stocks[index] = newStock;
+    this.stockChanged.next(this.stocks.slice());
+  }
+
+  addStock(stock: Stock){
+    this.stocks.push(stock);
     this.stockChanged.next(this.stocks.slice());
   }
 }

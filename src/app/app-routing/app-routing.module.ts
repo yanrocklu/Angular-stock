@@ -6,6 +6,7 @@ import {HomeComponent} from "../home/home.component";
 import {StocksComponent} from "../stocks/stocks.component";
 import {StockStartComponent} from "../stocks/stock-start/stock-start.component";
 import {StockDetailComponent} from "../stocks/stock-detail/stock-detail.component";
+import {StockEditComponent} from "../stocks/stock-edit/stock-edit.component";
 
 
 const appRoutes: Routes = [
@@ -14,7 +15,8 @@ const appRoutes: Routes = [
     children: [
       {path: '', component: StockStartComponent},
       // {path: 'new', component: }
-      {path: ':id', component: StockDetailComponent}
+      {path: ':id', component: StockDetailComponent},
+      {path: ':id/edit', component: StockEditComponent}
     ]
   }
 ];
