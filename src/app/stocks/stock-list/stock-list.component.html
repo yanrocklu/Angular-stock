@@ -8,18 +8,24 @@
 <!--todo: bootstrap class="float-right", doesn't work. May be a relative or absolute position issue-->
 <div class="row">
   <div class="col-xs-12">
-    <div class="float-right" id="codeFilter" >
+    <div class="float-right" id="codeFilter">
       <span class="glyphicon glyphicon-search custom-glyph-color"></span>
       <!--todo:  a better way to use placeholder?-->
+      <!--todo: this search input box position is not alligned-->
       <input type="text" [(ngModel)]="filteredStockCode" placeholder="Stock Code">
     </div>
-    <hr>
+    <br>
+    <br>
     <!--todo: there is  bug, in stock code search, if searching for 'BA', and add two stocks with BA as code, the list only show three BA stock, however, if you click the first BA resilt, stock detail show AAPL, because stock-item read the index from stock list, with searching on.  th list need to be update in real time, set a observable??? in stock.service, update andd add stock all have stockChanged observable, however somehow it doesn't pass to this stock-list.ts why, how???-->
     <!--Solution: f you have filterable index like described here, you'll have to assign a unique ID to your original data so that you DON'T take the item index number as criteria to select details but some ID which is really attached to the elements.-->
+
+    <!--*ngFor="let stockEl of stocks | stockCodeFilter:filteredStockCode:searchField; let i = index"-->
+    <!--[stock]="stockEl"-->
+    <!--[index]="i"-->
     <app-stock-item
-        *ngFor="let stockEl of stocks | stockCodeFilter:filteredStockCode:searchField; let i = index"
+        *ngFor="let stockEl of stocks | stockCodeFilter:filteredStockCode:searchField"
         [stock]="stockEl"
-        [index]="i"
+        [id]="stockEl.id"
     ></app-stock-item>
   </div>
 </div>

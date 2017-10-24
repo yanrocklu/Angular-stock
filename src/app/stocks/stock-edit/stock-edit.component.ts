@@ -33,26 +33,35 @@ export class StockEditComponent implements OnInit {
           console.log(this.id);
           console.log(this.stockForm);
           console.log(this.stockForm.value);
-          console.log(this.stockForm.valid);
+          console.log('stockForm.valid: ' + this.stockForm.valid);
 
         }
       )
   }
 
   private initForm() {
+    let stockId = -1;
     let stockName = '';
     let stockCode = '';
 
     if (this.editMode) {
       const stock = this.stockService.getStock(this.id);
+      stockId = this.id;
       stockName = stock.name;
       stockCode = stock.code;
     }
+    else{
+      stockId = this.stockService.maxId + 1;
+    }
 
     this.stockForm = new FormGroup({
+      'id': new FormControl(stockId),
       'name': new FormControl(stockName, Validators.required),
       'code': new FormControl(stockCode, Validators.required)
-    })
+    });
+
+    console.log('stockForm: ');
+    console.log(this.stockForm);
   }
 
   getStockForms() {

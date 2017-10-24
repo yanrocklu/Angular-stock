@@ -11,7 +11,7 @@
           <button
               type="submit"
               class="btn btn-success"
-              [disabled]="!getStockForms.valid">Save
+              [disabled]="!getStockForms().valid">Save
           </button>
           <button
               type="button"
@@ -35,10 +35,10 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="name">Stock Code</label>
+            <label for="code">Stock Code</label>
             <input type="text"
-                   id="name"
-                   formControlName="name"
+                   id="code"
+                   formControlName="code"
                    class="form-control">
           </div>
         </div>

@@ -9,7 +9,7 @@ import {Stock} from "../../stock.model";
 export class StockItemComponent implements OnInit {
 
   @Input() stock: Stock;
-  @Input() index: number;
+  @Input() id: number;
 
   constructor() { }
 
