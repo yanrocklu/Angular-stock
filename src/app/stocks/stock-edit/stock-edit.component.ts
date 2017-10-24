@@ -51,7 +51,8 @@ export class StockEditComponent implements OnInit {
       stockCode = stock.code;
     }
     else{
-      stockId = this.stockService.maxId + 1;
+      this.stockService.maxId += 1;
+      stockId = this.stockService.maxId;
     }
 
     this.stockForm = new FormGroup({
