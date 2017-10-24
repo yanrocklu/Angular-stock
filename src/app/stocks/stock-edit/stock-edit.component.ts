@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {ActivatedRoute, Router, Params} from "@angular/router";
-
 import {StockService} from "../stock.service";
 
 @Component({
@@ -14,8 +13,11 @@ export class StockEditComponent implements OnInit {
   editMode = false;
   stockForm: FormGroup;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+              //for getting route parameters
+              private route: ActivatedRoute,
               private stockService: StockService,
+              //for routing navigation
               private router: Router) {
   }
 
@@ -31,16 +33,20 @@ export class StockEditComponent implements OnInit {
           console.log(this.id);
           console.log(this.stockForm);
           console.log(this.stockForm.value);
+          console.log(this.stockForm.valid);
+
         }
       )
   }
 
-  private initForm(){
+  private initForm() {
     let stockName = '';
     let stockCode = '';
 
-    if (this.editMode){
-      let stock = this.stockService.getStock(this.id);
+    if (this.editMode) {
+      const stock = this.stockService.getStock(this.id);
+      stockName = stock.name;
+      stockCode = stock.code;
     }
 
     this.stockForm = new FormGroup({
@@ -49,19 +55,19 @@ export class StockEditComponent implements OnInit {
     })
   }
 
-  getStockForms(){
+  getStockForms() {
     return this.stockForm;
   }
 
-  onCancel(){
-    this.router.navigate(['../'],{relativeTo: this.route});
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
-  onSubmit(){
-    if (this.editMode){
+  onSubmit() {
+    if (this.editMode) {
       this.stockService.updateStock(this.id, this.stockForm.value);
     }
-    else{
+    else {
       this.stockService.addStock(this.stockForm.value);
     }
     this.onCancel();

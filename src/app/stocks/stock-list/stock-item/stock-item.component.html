@@ -4,7 +4,8 @@
    routerLinkActive="active">
   <div class="pull-left">
     <h4 class="list-group-item-heading">Name: {{stock.name}}</h4>
-    <p class="list-group-item-text">Code: {{stock.code}}</p>
+    <!--use build-in pipes uppercase for the code field-->
+    <p class="list-group-item-text">Code: {{stock.code | uppercase}}</p>
   </div>
 
 </a>

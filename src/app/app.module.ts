@@ -15,6 +15,8 @@ import { StockItemComponent } from './stocks/stock-list/stock-item/stock-item.co
 import { StockDetailComponent } from './stocks/stock-detail/stock-detail.component';
 import { StockEditComponent } from './stocks/stock-edit/stock-edit.component';
 import {DropdownDirective} from "./shared/dropdown.directive";
+import {PipesModule} from "./pipe/pipes.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import {DropdownDirective} from "./shared/dropdown.directive";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PipesModule
   ],
   providers: [StockService],
   bootstrap: [AppComponent]

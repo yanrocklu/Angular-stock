@@ -1,8 +1,9 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
-
-import {Stock} from "../stock.model"
-import {StockService} from "../stock.service";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {Subscription} from "rxjs";
+import {Router, ActivatedRoute} from "@angular/router";
+
+import {Stock} from "../stock.model";
+import {StockService} from "../stock.service";
 
 @Component({
   selector: 'app-stock-list',
@@ -13,8 +14,12 @@ export class StockListComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
   stocks: Stock[];
+  searchField = 'code';
 
-  constructor(private stockService: StockService) { }
+  constructor(private stockService: StockService,
+              private router: Router,
+              private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.subscription = this.stockService.stockChanged.subscribe(
@@ -25,14 +30,13 @@ export class StockListComponent implements OnInit, OnDestroy {
     this.stocks = this.stockService.getStocks();
   }
 
-  onAddNewStock(){
-
+  onAddNewStock() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 
 
 }

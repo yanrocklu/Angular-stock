@@ -14,7 +14,7 @@ export class StockService{
     ),
     new Stock(
       'Google',
-      'GOOGL'
+      'googl'
     ),
     new Stock(
       'Facebook',
@@ -27,6 +27,14 @@ export class StockService{
     new Stock(
       'Boeing',
       'BA'
+    ),
+    new Stock(
+      'Boeing777',
+      'BA777'
+    ),
+    new Stock(
+      'Boeing747',
+      'BA747'
     )
   ];
 

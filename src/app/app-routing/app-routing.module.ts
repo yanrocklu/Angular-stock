@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   {path: 'stocks', component: StocksComponent,
     children: [
       {path: '', component: StockStartComponent},
-      // {path: 'new', component: }
+      {path: 'new', component: StockEditComponent},
       {path: ':id', component: StockDetailComponent},
       {path: ':id/edit', component: StockEditComponent}
     ]

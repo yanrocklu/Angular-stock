@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StocksComponent implements OnInit {
 
+  today = new Date();
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
