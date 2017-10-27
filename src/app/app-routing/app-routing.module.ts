@@ -7,6 +7,7 @@ import {StocksComponent} from "../stocks/stocks.component";
 import {StockStartComponent} from "../stocks/stock-start/stock-start.component";
 import {StockDetailComponent} from "../stocks/stock-detail/stock-detail.component";
 import {StockEditComponent} from "../stocks/stock-edit/stock-edit.component";
+import {ErrorPageComponent} from "../error-page/error-page.component";
 
 
 const appRoutes: Routes = [
@@ -18,7 +19,12 @@ const appRoutes: Routes = [
       {path: ':id', component: StockDetailComponent},
       {path: ':id/edit', component: StockEditComponent}
     ]
-  }
+  },
+
+  // points: redirecting anf wildcard route
+  // todo: cannot redirect to an error page with route 'http://localhost:4200/stocks/25', 25 is not existing
+  {path: 'not-found', component: ErrorPageComponent},
+  {path: '**', redirectTo: '/not-found', pathMatch: 'full'}
 ];
 
 @NgModule({

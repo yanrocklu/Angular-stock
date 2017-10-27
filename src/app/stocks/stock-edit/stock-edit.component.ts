@@ -30,10 +30,10 @@ export class StockEditComponent implements OnInit {
           this.editMode = params['id'] != null;
           //  call initForm whenever the route params change, because that indicates we reload the page.
           this.initForm();
-          console.log(this.id);
-          console.log(this.stockForm);
-          console.log(this.stockForm.value);
-          console.log('stockForm.valid: ' + this.stockForm.valid);
+          // console.log(this.id);
+          // console.log(this.stockForm);
+          // console.log(this.stockForm.value);
+          // console.log('stockForm.valid: ' + this.stockForm.valid);
 
         }
       )
@@ -61,8 +61,8 @@ export class StockEditComponent implements OnInit {
       'code': new FormControl(stockCode, Validators.required)
     });
 
-    console.log('stockForm: ');
-    console.log(this.stockForm);
+    // console.log('stockForm: ');
+    // console.log(this.stockForm);
   }
 
   getStockForms() {

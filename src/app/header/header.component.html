@@ -12,6 +12,17 @@
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/stocks">Stocks</a></li>
       </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" appDropDown>
+          <!--Overriding the role where no host language element is appropriate .a link was used, even though the resulting functionality is more button-like than a navigation link.-->
+          <a style="cursor:pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;" (click)="onSaveData()">Save Data</a></li>
+            <li><a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

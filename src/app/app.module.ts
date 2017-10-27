@@ -17,6 +17,10 @@ import { StockEditComponent } from './stocks/stock-edit/stock-edit.component';
 import {DropdownDirective} from "./shared/dropdown.directive";
 import {PipesModule} from "./pipe/pipes.module";
 import {CommonModule} from "@angular/common";
+import { ErrorPageComponent } from './error-page/error-page.component';
+import {DataStorageService} from "./shared/data-storage.service";
+import { SaveDataComponent } from './popup/save-data/save-data.component';
+// import {Ng2PopupModule} from "ng2-popup";
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import {CommonModule} from "@angular/common";
     StockItemComponent,
     StockDetailComponent,
     StockEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    ErrorPageComponent,
+    SaveDataComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +44,10 @@ import {CommonModule} from "@angular/common";
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    PipesModule
+    PipesModuleng serve
+    // Ng2PopupModule
   ],
-  providers: [StockService],
+  providers: [StockService,DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
