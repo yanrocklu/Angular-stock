@@ -44,7 +44,7 @@ import { SaveDataComponent } from './popup/save-data/save-data.component';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    PipesModuleng serve
+    PipesModule
     // Ng2PopupModule
   ],
   providers: [StockService,DataStorageService],

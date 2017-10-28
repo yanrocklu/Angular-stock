@@ -26,7 +26,7 @@ export class StockListComponent implements OnInit, OnDestroy {
       (stocks: Stock[]) => {
         this.stocks = stocks;
       }
-    )
+    );
     this.stocks = this.stockService.getStocks();
     // console.log('maxId: ' + this.stockService.maxId);
     // console.log('stocks array: ');

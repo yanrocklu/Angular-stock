@@ -8,11 +8,11 @@ export class StockService{
   stockChanged = new Subject<Stock[]>();
 
   private stocks: Stock[] = [
-    // new Stock(
-    //   0,
-    //   'Netflix',
-    //   'NFLX'
-    // ),
+    new Stock(
+      0,
+      'Netflix',
+      'NFLX'
+    ),
     new Stock(
       1,
       'Apple',
@@ -56,6 +56,11 @@ export class StockService{
     return this.stocks.slice();
   }
 
+  setStocks(stocks: Stock[]){
+    this.stocks = stocks;
+    this.stockChanged.next(this.stocks.slice());
+  }
+
   // todo: getStock, add, delete, update, need to rewrite with id
 
   getStock(id:number){
@@ -73,6 +78,8 @@ export class StockService{
     return this.stocks.slice().find(stock => stock.id === id);
     // return this.stocks.slice().filter(stock => stock.id === id)[0];
   }
+
+
 
   deleteStock(id: number){
     // this.stocks.splice(id,1);
