@@ -1,6 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {DataStorageService} from "../shared/data-storage.service";
 import {Response} from "@angular/http";
+import {AuthService} from "../auth/auth.service";
 // import {Ng2PopupComponent, Ng2MessagePopupComponent} from "ng2-popup";
 
 @Component({
@@ -11,12 +12,14 @@ import {Response} from "@angular/http";
 export class HeaderComponent implements OnInit {
   // @ViewChild(Ng2PopupComponent) popup:Ng2PopupComponent;
 
-  constructor(private dataStorageService: DataStorageService) { }
+  constructor(private dataStorageService: DataStorageService,
+              private authService: AuthService) {
+  }
 
   ngOnInit() {
   }
 
-  onSaveData(){
+  onSaveData() {
     // dataStorageService.saveStocks() returns an observable, so need to subscribe to use the response
     this.dataStorageService.saveStocks()
       .subscribe(
@@ -42,8 +45,16 @@ export class HeaderComponent implements OnInit {
   //   })
   // }
 
-  onFetchData(){
+  onFetchData() {
     this.dataStorageService.fetchStocks();
+  }
+
+  onLogout() {
+    this.authService.logOut();
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 
 }

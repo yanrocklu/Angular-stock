@@ -10,6 +10,7 @@ import {StockEditComponent} from "../stocks/stock-edit/stock-edit.component";
 import {ErrorPageComponent} from "../error-page/error-page.component";
 import {SigninComponent} from "../auth/signin/signin.component";
 import {SignupComponent} from "../auth/signup/signup.component";
+import {AuthGuardService} from "../auth/auth-guard.service";
 
 
 const appRoutes: Routes = [
@@ -17,9 +18,9 @@ const appRoutes: Routes = [
   {path: 'stocks', component: StocksComponent,
     children: [
       {path: '', component: StockStartComponent},
-      {path: 'new', component: StockEditComponent},
+      {path: 'new', component: StockEditComponent, canActivate: [AuthGuardService]},
       {path: ':id', component: StockDetailComponent},
-      {path: ':id/edit', component: StockEditComponent}
+      {path: ':id/edit', component: StockEditComponent, canActivate: [AuthGuardService]}
     ]
   },
   {path: 'signin', component: SigninComponent},
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   exports: [RouterModule],
-  declarations: []
+  declarations: [],
+  providers: [AuthGuardService]
 })
 export class AppRoutingModule { }

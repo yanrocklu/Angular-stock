@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Stock} from "../stock.model";
 import {StockService} from "../stock.service";
 import {ActivatedRoute, Router, Params} from "@angular/router";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-stock-detail',
@@ -14,6 +15,7 @@ export class StockDetailComponent implements OnInit {
   id: number;
 
   constructor(private stockService: StockService,
+              private authService: AuthService,
               private route: ActivatedRoute,
               private router: Router) {
   }
@@ -37,4 +39,7 @@ export class StockDetailComponent implements OnInit {
     this.router.navigate(['/stocks']);
   }
 
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
+  }
 }
