@@ -20,6 +20,9 @@ import {CommonModule} from "@angular/common";
 import { ErrorPageComponent } from './error-page/error-page.component';
 import {DataStorageService} from "./shared/data-storage.service";
 import { SaveDataComponent } from './popup/save-data/save-data.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import {AuthService} from "./auth/auth.service";
 // import {Ng2PopupModule} from "ng2-popup";
 
 @NgModule({
@@ -35,7 +38,9 @@ import { SaveDataComponent } from './popup/save-data/save-data.component';
     StockEditComponent,
     DropdownDirective,
     ErrorPageComponent,
-    SaveDataComponent
+    SaveDataComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ import { SaveDataComponent } from './popup/save-data/save-data.component';
     PipesModule
     // Ng2PopupModule
   ],
-  providers: [StockService,DataStorageService],
+  providers: [StockService,DataStorageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
