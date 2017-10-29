@@ -6,11 +6,14 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 import {DataStorageService} from "../services/data-storage.service";
 import {AuthService} from "../auth/auth.service";
 import {SharedModule} from "../shared/shared.module";
+import {StockService} from "../services/stock.service";
+import {AppRoutingModule} from "../app-routing/app-routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   declarations: [
     HeaderComponent,
@@ -18,10 +21,12 @@ import {SharedModule} from "../shared/shared.module";
     ErrorPageComponent
   ],
   providers: [
+    StockService,
     DataStorageService,
     AuthService
   ],
   exports: [
+    AppRoutingModule,
     // export this HeaderComponent because it's used in app.component.html
     HeaderComponent
   ]

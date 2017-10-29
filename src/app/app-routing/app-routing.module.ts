@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule, PreloadAllModules, Routes} from "@angular/router";
 
 import {HomeComponent} from "../core/home/home.component";
@@ -8,8 +7,6 @@ import {StockStartComponent} from "../stocks/stock-start/stock-start.component";
 import {StockDetailComponent} from "../stocks/stock-detail/stock-detail.component";
 import {StockEditComponent} from "../stocks/stock-edit/stock-edit.component";
 import {ErrorPageComponent} from "../core/error-page/error-page.component";
-import {SigninComponent} from "../auth/signin/signin.component";
-import {SignupComponent} from "../auth/signup/signup.component";
 import {AuthGuardService} from "../auth/auth-guard.service";
 
 
@@ -23,8 +20,6 @@ const appRoutes: Routes = [
       {path: ':id/edit', component: StockEditComponent, canActivate: [AuthGuardService]}
     ]
   },
-  {path: 'signin', component: SigninComponent},
-  {path: 'signup', component: SignupComponent},
   // points: redirecting anf wildcard route
   // todo: cannot redirect to an error page with route 'http://localhost:4200/stocks/25', 25 is not existing
   {path: 'not-found', component: ErrorPageComponent},
@@ -33,7 +28,6 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule,
     RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   exports: [RouterModule],
