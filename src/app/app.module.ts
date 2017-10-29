@@ -23,6 +23,7 @@ import { SaveDataComponent } from './popup/save-data/save-data.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import {AuthService} from "./auth/auth.service";
+import {StocksModule} from "./stocks/stocks.module";
 // import {Ng2PopupModule} from "ng2-popup";
 
 @NgModule({
@@ -30,12 +31,6 @@ import {AuthService} from "./auth/auth.service";
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    StocksComponent,
-    StockListComponent,
-    StockStartComponent,
-    StockItemComponent,
-    StockDetailComponent,
-    StockEditComponent,
     DropdownDirective,
     ErrorPageComponent,
     SaveDataComponent,
@@ -45,13 +40,13 @@ import {AuthService} from "./auth/auth.service";
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    PipesModule
+    StocksModule,
+    FormsModule
     // Ng2PopupModule
   ],
+  exports: [AppRoutingModule],
   providers: [StockService,DataStorageService, AuthService],
   bootstrap: [AppComponent]
 })
