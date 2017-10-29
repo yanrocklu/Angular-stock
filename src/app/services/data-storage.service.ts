@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
-import {StockService} from "../stocks/stock.service";
-import {Stock} from "../stocks/stock.model";
+import {StockService} from "./stock.service";
+import {Stock} from "../model/stock.model";
 import {AuthService} from "../auth/auth.service";
 
 @Injectable()

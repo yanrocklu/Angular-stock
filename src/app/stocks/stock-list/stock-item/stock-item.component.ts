@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Stock} from "../../stock.model";
+import {Stock} from "../../../model/stock.model";
 
 @Component({
   selector: 'app-stock-item',

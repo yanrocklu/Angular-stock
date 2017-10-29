@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {Stock} from "../stock.model";
-import {StockService} from "../stock.service";
+import {Stock} from "../../model/stock.model";
+import {StockService} from "../../services/stock.service";
 import {ActivatedRoute, Router, Params} from "@angular/router";
 import {AuthService} from "../../auth/auth.service";
 

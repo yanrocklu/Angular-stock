@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, PreloadAllModules, Routes} from "@angular/router";
 
-import {HomeComponent} from "../home/home.component";
+import {HomeComponent} from "../core/home/home.component";
 import {StocksComponent} from "../stocks/stocks.component";
 import {StockStartComponent} from "../stocks/stock-start/stock-start.component";
 import {StockDetailComponent} from "../stocks/stock-detail/stock-detail.component";
 import {StockEditComponent} from "../stocks/stock-edit/stock-edit.component";
-import {ErrorPageComponent} from "../error-page/error-page.component";
+import {ErrorPageComponent} from "../core/error-page/error-page.component";
 import {SigninComponent} from "../auth/signin/signin.component";
 import {SignupComponent} from "../auth/signup/signup.component";
 import {AuthGuardService} from "../auth/auth-guard.service";

@@ -1,30 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
+import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing/app-routing.module";
-import {StockService} from "./stocks/stock.service";
-import {DropdownDirective} from "./shared/dropdown.directive";
+import {StockService} from "./services/stock.service";
 import {CommonModule} from "@angular/common";
-import { ErrorPageComponent } from './error-page/error-page.component';
-import {DataStorageService} from "./shared/data-storage.service";
-import { SaveDataComponent } from './popup/save-data/save-data.component';
+import {DataStorageService} from "./services/data-storage.service";
+import {SaveDataComponent} from "./popup/save-data/save-data.component";
 import {AuthService} from "./auth/auth.service";
 import {StocksModule} from "./stocks/stocks.module";
 import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
+import {CoreModule} from "./core/core.module";
 // import {Ng2PopupModule} from "ng2-popup";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    ErrorPageComponent,
     SaveDataComponent
   ],
   imports: [
@@ -35,11 +29,13 @@ import {AuthModule} from "./auth/auth.module";
     StocksModule,
     FormsModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    CoreModule
     // Ng2PopupModule
   ],
   exports: [AppRoutingModule],
-  providers: [StockService,DataStorageService, AuthService],
+  providers: [StockService, DataStorageService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

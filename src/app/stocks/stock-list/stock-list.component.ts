@@ -2,8 +2,8 @@ import {Component, OnInit, OnDestroy} from "@angular/core";
 import {Subscription} from "rxjs";
 import {Router, ActivatedRoute} from "@angular/router";
 
-import {Stock} from "../stock.model";
-import {StockService} from "../stock.service";
+import {Stock} from "../../model/stock.model";
+import {StockService} from "../../services/stock.service";
 
 @Component({
   selector: 'app-stock-list',
