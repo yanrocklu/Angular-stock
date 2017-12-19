@@ -4,11 +4,9 @@ import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
 import {SaveDataComponent} from "./popup/save-data/save-data.component";
-import {StocksModule} from "./stocks/stocks.module";
 import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
 import {CoreModule} from "./core/core.module";
-import {AppRoutingModule} from "./app-routing/app-routing.module";
 
 // import {Ng2PopupModule} from "ng2-popup";
 
@@ -20,8 +18,8 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
   imports: [
     BrowserModule,
     HttpModule,
-    AppRoutingModule,
-    StocksModule,
+    // lazy loading, so do not need StocksModule
+    // StocksModule,
     SharedModule,
     AuthModule,
     CoreModule
