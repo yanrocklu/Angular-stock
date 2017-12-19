@@ -3,7 +3,6 @@ import {RouterModule, PreloadAllModules, Routes} from "@angular/router";
 
 import {HomeComponent} from "../core/home/home.component";
 import {ErrorPageComponent} from "../core/error-page/error-page.component";
-import {StocksComponent} from "../stocks/stocks.component";
 
 
 const appRoutes: Routes = [

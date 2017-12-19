@@ -25,21 +25,29 @@ export class StockDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.stock = this.stockService.getStock(this.id);
+          if (this.stockService.getStock(this.id)) {
+            this.stock = this.stockService.getStock(this.id);
+            console.log('this.id: ' + this.id);
+          }
+          else{
+            // this.stock = null;
+            this.router.navigate(['../../not-found'], {relativeTo: this.route});
+            console.log('cannot find ' + this.id);
+          }
         }
       )
   }
 
-  onEditStock(){
+  onEditStock() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
-  onDeleteStock(){
+  onDeleteStock() {
     this.stockService.deleteStock(this.id);
     this.router.navigate(['/stocks']);
   }
 
-  isAuthenticated(){
+  isAuthenticated() {
     return this.authService.isAuthenticated();
   }
 }

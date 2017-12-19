@@ -15,7 +15,7 @@
     </div>
     <br>
     <br>
-    <!--todo: there is  bug, in stock code search, if searching for 'BA', and add two stocks with BA as code, the list only show three BA stock, however, if you click the first BA resilt, stock detail show AAPL, because stock-item read the index from stock list, with searching on.  th list need to be update in real time, set a observable??? in stock.service, update andd add stock all have stockChanged observable, however somehow it doesn't pass to this stock-list.ts why, how???-->
+    <!--WAS a bug: there is  bug, in stock code search, if searching for 'BA', and add two stocks with BA as code, the list only show three BA stock, however, if you click the first BA resilt, stock detail show AAPL, because stock-item read the index from stock list, with searching on.  th list need to be update in real time, set a observable??? in stock.service, update andd add stock all have stockChanged observable, however somehow it doesn't pass to this stock-list.ts why, how???-->
     <!--Solution: f you have filterable index like described here, you'll have to assign a unique ID to your original data so that you DON'T take the item index number as criteria to select details but some ID which is really attached to the elements.-->
 
     <!--*ngFor="let stockEl of stocks | stockCodeFilter:filteredStockCode:searchField; let i = index"-->
