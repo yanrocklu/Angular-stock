@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
-
 import {DropdownDirective} from "./dropdown.directive";
 import {PipesModule} from "./pipe/pipes.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   imports: [
@@ -10,9 +10,10 @@ import {PipesModule} from "./pipe/pipes.module";
   declarations: [
     DropdownDirective
   ],
-  providers: [
-  ],
-  exports: [PipesModule]
+  providers: [],
+  exports: [
+    PipesModule,
+    CommonModule]
 })
 export class SharedModule {
 }

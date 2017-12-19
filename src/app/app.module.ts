@@ -9,6 +9,7 @@ import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
 import {CoreModule} from "./core/core.module";
 import {AppRoutingModule} from "./app-routing/app-routing.module";
+
 // import {Ng2PopupModule} from "ng2-popup";
 
 @NgModule({
@@ -19,7 +20,7 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
   imports: [
     BrowserModule,
     HttpModule,
-    // AppRoutingModule,
+    AppRoutingModule,
     StocksModule,
     SharedModule,
     AuthModule,
