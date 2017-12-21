@@ -10,8 +10,10 @@ import {Component, OnInit} from "@angular/core";
 export class AppComponent implements OnInit {
   ngOnInit() {
     firebase.initializeApp({
+      // apiKey: "AIzaSyAzujwNNGXQdWALsR98farye3RslDTkImU",
+      // authDomain: "ngstock-rock.firebaseapp.com",
       apiKey: "AIzaSyAzujwNNGXQdWALsR98farye3RslDTkImU",
-      authDomain: "ngstock-rock.firebaseapp.com",
+      authDomain: "ngstock-rock.firebaseapp.com"
     })
   }
 }

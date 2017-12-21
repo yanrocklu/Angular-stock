@@ -27,7 +27,7 @@ export class StockDetailComponent implements OnInit {
           this.id = +params['id'];
           if (this.stockService.getStock(this.id)) {
             this.stock = this.stockService.getStock(this.id);
-            console.log('this.id: ' + this.id);
+            // console.log('this.id: ' + this.id);
           }
           else{
             // this.stock = null;

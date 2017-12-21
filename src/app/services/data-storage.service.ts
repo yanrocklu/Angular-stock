@@ -13,13 +13,13 @@ export class DataStorageService {
   }
 
   saveStocks() {
-    const token = this.authService.getToken;
+    const token = this.authService.getToken();
     // the put Method ony gives back an observable
     return this.http.put('https://ngstock-rock.firebaseio.com/stocks.json?auth=' +token, this.stockService.getStocks());
   }
 
   fetchStocks() {
-    const token = this.authService.getToken;
+    const token = this.authService.getToken();
 
     this.http.get('https://ngstock-rock.firebaseio.com/stocks.json?auth=' + token)
       .subscribe(

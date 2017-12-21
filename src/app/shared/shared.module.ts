@@ -13,6 +13,7 @@ import {CommonModule} from "@angular/common";
   providers: [],
   exports: [
     PipesModule,
+    DropdownDirective,
     CommonModule]
 })
 export class SharedModule {

@@ -16,7 +16,7 @@ export class StockService{
     new Stock(
       1,
       'Apple',
-      'AAPL'
+      'aapl'
     ),
     new Stock(
       2,
