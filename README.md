@@ -1,6 +1,32 @@
 # NgStock
+```
+> git clone https://github.com/yanrocklu/ng-stock.git
+> cd ng-stock
+> npm install
+> ng serve
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+To sign in the project 
+
+> User :      admin@admin.com
+> password:   123456
+```
+
+This project is a stock list that allows users to browse/edit a stock list. A Firebase backend is used for data storage and authentication. Authenticated users can then edit stocks, save and fetch data.
+It's a comprehensive Angular single page application covering all the Angular 4 updates.
+
+Angular 4 features exhibits in this project:
+- directives, components & databinding;
+- services & dependency injection;
+- forms (both template-driven and reactive);
+- routing;
+- observables;
+- HTTP request handling;
+- modules;
+- authentication & route protection;
+- AoT compilation & Optimizing an Angular App;
+- Firebase & AWS deployment.
+
+This project was generated with Angular CLI version 1.3.0.
 
 ## Development server
 
